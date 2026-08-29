@@ -1,0 +1,17 @@
+Producto-Ajuares
+
+.\images\banners\catalogo\productos-ajuares\
+
+Cojin_decorativo.webp
+Cortina_con_Argolla.webp
+Cortina_con_estampado.webp
+Cortina_de_blackout_Estampado_Foil.webp
+Cortina_opaca_aislante_140_x_280_cm_Alba_Verde_Romero.webp
+Cortina_blackout_diseno_Foil.webp
+Juego_de_funda_nórdica_de_satén_100%_algodón_gris_plateado.webp
+Juego_de_Toallas_en_colores_100_x_120_cm.webp
+Toalla_de playa_ original_100_x_180_cm.webp
+Toalla_de_baño-Muval_140_x_70_cm.webp
+Toalla_de_sauna_orgánica_de_80x200_cm_azul_aguamarina.webp
+Toalla_gris_original_100x120_cm.webp
+Toalla_Sophie_Muva.webp

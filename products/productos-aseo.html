@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de productos de Aseo y Limpieza | MBCompany Pinar del Río.">
+    <title>Aseo y Limpieza | MBCompany</title>
+    <style>
+        /* =========================================
+           VARIABLES Y RESET (idénticas a index.html
+           para mantener la misma identidad visual)
+           ========================================= */
+        :root {
+            --primary: #1A365D;
+            --accent: #D4AF37;
+            --gris-humo: #d7dadc;
+            --bg-light: #F7FAFC;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --white: #FFFFFF;
+            --whatsapp: #25D366;
+            --cat-aseo: #3182CE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* =========================================
+           HEADER Y NAVEGACIÓN (igual que index.html)
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--gris-humo);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* =========================================
+           BREADCRUMB / VOLVER
+           ========================================= */
+        .breadcrumb-bar {
+            background-color: var(--bg-light);
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gris-humo);
+        }
+
+        .breadcrumb-bar a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb-bar a:hover {
+            color: var(--cat-aseo);
+        }
+
+        /* =========================================
+           CATEGORY HERO
+           ========================================= */
+        .category-hero {
+            background: linear-gradient(135deg, var(--cat-aseo) 0%, #1e4e73 100%);
+            color: var(--white);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .category-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .category-hero p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           GRID DE PRODUCTOS
+           ========================================= */
+        .products {
+            padding: 50px 0 70px;
+            background-color: var(--white);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            position: relative;
+            background: var(--white);
+            border: 1px solid var(--gris-humo);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--cat-aseo);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .product-banner {
+            position: relative;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-light);
+            border-bottom: 2px dashed rgba(49,130,206,0.2);
+            overflow: hidden;
+        }
+
+        .product-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-banner .banner-fallback {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background: repeating-linear-gradient(
+                135deg,
+                rgba(49,130,206,0.05),
+                rgba(49,130,206,0.05) 10px,
+                rgba(49,130,206,0.1) 10px,
+                rgba(49,130,206,0.1) 20px
+            );
+        }
+
+        .product-banner svg {
+            width: 46px;
+            height: 46px;
+            stroke: var(--cat-aseo);
+        }
+
+        .product-info {
+            padding: 12px 10px 16px;
+        }
+
+        .product-info p {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .product-info .price {
+            color: var(--cat-aseo);
+            font-weight: 700;
+        }
+
+        .products-note {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 35px;
+        }
+
+        .products-cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           FOOTER (igual que index.html)
+           ========================================= */
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-slogan {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           RESPONSIVE (Mobile First)
+           ========================================= */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+                border-top: 2px solid var(--gris-humo);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .category-hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MB<span>Company</span></a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html#inicio" onclick="closeMenu()">Inicio</a></li>
+                    <li><a href="../catalogo.html" onclick="closeMenu()">Catálogo</a></li>
+                    <li><a href="../nosotros.html" onclick="closeMenu()">Nosotros</a></li>
+                    <li><a href="../contacto.html" onclick="closeMenu()">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- VOLVER AL CATÁLOGO -->
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <a href="../catalogo.html">&larr; Volver al catálogo</a>
+        </div>
+    </div>
+
+    <!-- HERO DE CATEGORÍA -->
+    <section class="category-hero fade-in">
+        <div class="container">
+            <h1>Aseo y Limpieza</h1>
+            <p>Productos de higiene personal y mantenimiento del hogar.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products fade-in">
+        <div class="container">
+            <div class="product-grid" id="productGrid">
+                <!-- Las tarjetas de producto se generan con JavaScript, ver el <script> al final -->
+            </div>
+
+            <p class="products-note">* Precios de referencia. Consulta disponibilidad y precio actualizado por WhatsApp.</p>
+
+            <div class="products-cta">
+                <a href="https://wa.me/5356729186?text=Hola%20MBCompany,%20me%20interesa%20consultar%20disponibilidad%20de%20un%20producto%20de%20Aseo%20y%20Limpieza." class="btn btn-whatsapp" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.59 2 2.17 6.42 2.17 11.87c0 1.75.46 3.45 1.33 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.45 0 9.87-4.42 9.87-9.87S17.49 2 12.04 2zm5.23 13.94c-.22.62-1.28 1.19-1.77 1.27-.47.08-.91.11-2.77-.67-2.34-.98-3.84-3.36-3.96-3.52-.12-.16-.96-1.28-.96-2.44s.61-1.73.82-1.97c.22-.24.47-.3.62-.3.16 0 .31 0 .45.01.15.01.35-.06.55.42.2.48.68 1.66.74 1.78.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.48.14.23.62 1.02 1.33 1.65.91.81 1.68 1.06 1.92 1.18.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.16 1.2z"/></svg>
+                    Consultar Disponibilidad por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="footer-slogan">"El Precio se olvida, la Calidad se recuerda"</p>
+            <div class="footer-links">
+                <a href="../index.html#inicio">Inicio</a>
+                <a href="../catalogo.html">Catálogo</a>
+                <a href="../nosotros.html">Nosotros</a>
+                <a href="../contacto.html">Contacto</a>
+            </div>
+            <p class="copyright">&copy; 2026 Website created by MSc. Reynaldo Ramos Pérez. All rights reserved. Pinar del Río, Cuba.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. Listado real de productos (nombre corregido + archivo de imagen del banner)
+        const boxIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>';
+        const imgFolder = '../images/banners/catalogo/productos-aseo/';
+
+        const products = [
+            { file: "Acondicionador-de-argan-355ml.webp", name: "Acondicionador de Argán 355ml" },
+            { file: "Acondicionador-de-macadamia-355ml.webp", name: "Acondicionador de Macadamia 355ml" },
+            { file: "Algodon-facial-120-piezas.webp", name: "Algodón Facial 120 Piezas" },
+            { file: "Ambientador-de-coche-marc-marquez.webp", name: "Ambientador de Coche Marc Márquez" },
+            { file: "Champu_con_Extracto_de_Keratina_Doxa_ml.webp", name: "Champú con Extracto de Keratina Doxa" },
+            { file: "Champu_con_Keratina_Doxa_Life_ml.webp", name: "Champú con Keratina Doxa Life" },
+            { file: "Champu_Menta_Doxa_Life_ml.webp", name: "Champú de Menta Doxa Life" },
+            { file: "Champu-de-argan-355ml.webp", name: "Champú de Argán 355ml" },
+            { file: "combo-aseo-1.webp", name: "Combo de Aseo 1" },
+            { file: "combo-aseo-2.webp", name: "Combo de Aseo 2" },
+            { file: "combo-aseo-3.webp", name: "Combo de Aseo 3" },
+            { file: "desengrasante-1l.webp", name: "Desengrasante 1L" },
+            { file: "Desodorante_Avena_Roll_On_IE_ml.webp", name: "Desodorante Avena Roll-On IE" },
+            { file: "Desodorante_Roll_on_Oliva_50_ml_BABARIA.webp", name: "Desodorante Roll-On Oliva 50ml BABARIA" },
+            { file: "Desodorante_Spray_Fragancia_Colonia_200ml_Belle_France.webp", name: "Desodorante Spray Fragancia Colonia 200ml Belle France" },
+            { file: "desodorante-invisible-antitranspirante-250ml.webp", name: "Desodorante Invisible Antitranspirante 250ml" },
+            { file: "desodorante-xtra-care-dry-fresh-57gr.webp", name: "Desodorante Xtra Care Dry Fresh 57gr" },
+            { file: "desosodrant-en-barra-speed-stick-51gr-.webp", name: "Desodorante en Barra Speed Stick 51gr" },
+            { file: "Detergente_de_Lavar_en_Polvo_500g_WASHO_PLUS.webp", name: "Detergente de Lavar en Polvo 500g WASHO PLUS" },
+            { file: "Detergente_Ropa_Blanca_Prodoxa_Kg.webp", name: "Detergente Ropa Blanca Prodoxa" },
+            { file: "detergente-alcalino-clean-plac-2kg.webp", name: "Detergente Alcalino Clean Plac 2kg" },
+            { file: "detergente-amoniacal-amon-2kg.webp", name: "Detergente Amoniacal Amón 2kg" },
+            { file: "detergente-lavado-de-ropa-klisol-2l.webp", name: "Detergente para Lavado de Ropa Klisol 2L" },
+            { file: "detergente-multiusos-laf-5kg.webp", name: "Detergente Multiusos LAF 5kg" },
+            { file: "Gel_de_Bao_Urea_IE_ml.webp", name: "Gel de Baño Urea IE" },
+            { file: "Gel_Dermo_250ml_COAILMENT.webp", name: "Gel Dermo 250ml COAILMENT" },
+            { file: "gel-de-bano-vita-san-2kg.webp", name: "Gel de Baño Vita San 2kg" },
+            { file: "guantes-para-la-limpieza.webp", name: "Guantes para la Limpieza" },
+            { file: "Jabon_para_Lavar_a_Mano_150g_MEA.webp", name: "Jabón para Lavar a Mano 150g MEA" },
+            { file: "jabon-barra-aloe-vera-60-gr.webp", name: "Jabón en Barra Aloe Vera 60gr" },
+            { file: "jabon-barra-aloe-vera-y-crema-150gr.webp", name: "Jabón en Barra Aloe Vera y Crema 150gr" },
+            { file: "jabon-barra-miel-y-leche-60-gr.webp", name: "Jabón en Barra Miel y Leche 60gr" },
+            { file: "jabon-barra-miel-y-leche-150gr.webp", name: "Jabón en Barra Miel y Leche 150gr" },
+            { file: "jabon-barra-rosa-60-gr.webp", name: "Jabón en Barra Rosa 60gr" },
+            { file: "jabon-barra-rosa-150gr.webp", name: "Jabón en Barra Rosa 150gr" },
+            { file: "jabon-de-lavar-a-roma-vainilla-200gr.webp", name: "Jabón de Lavar Aroma Vainilla 200gr" },
+            { file: "jabon-herbal-extract-170gr.webp", name: "Jabón Herbal Extract 170gr" },
+            { file: "jabon-moisture-care-170gr.webp", name: "Jabón Moisture Care 170gr" },
+            { file: "jabon-tender-sensation-170-gr.webp", name: "Jabón Tender Sensation 170gr" },
+            { file: "lavaplatos-en-gel-de-fresa-250gr.webp", name: "Lavaplatos en Gel de Fresa 250gr" },
+            { file: "lavaplatos-en-gel-de-limon-250gr.webp", name: "Lavaplatos en Gel de Limón 250gr" },
+            { file: "lavavajillas-teide-2l.webp", name: "Lavavajillas Teide 2L" },
+            { file: "lejia-con-detergente-2l-.webp", name: "Lejía con Detergente 2L" },
+            { file: "mascarilla-capilar-oro-liquido-350gr.webp", name: "Mascarilla Capilar Oro Líquido 350gr" },
+            { file: "Papel_Higinioco_Doble_Capa_Columbia_Rollos.webp", name: "Papel Higiénico Doble Capa Columbia" },
+            { file: "Papel_Higinioco_Familiar_2_Capas_4u_FAMILIA.webp", name: "Papel Higiénico Familiar 2 Capas 4u FAMILIA" },
+            { file: "Papel_Higinioco_Ole_4u_RENOVA.webp", name: "Papel Higiénico Olé 4u RENOVA" },
+            { file: "Papel_Higinioco_Renova_Super_2_rollos.webp", name: "Papel Higiénico Renova Super 2 Rollos" },
+            { file: "Pasta_Dental_Activa_3_Active_110g_ASTERA.webp", name: "Pasta Dental Activa 3 Active 110g ASTERA" },
+            { file: "Pasta_Dental_Fresh_g.webp", name: "Pasta Dental Fresh" },
+            { file: "Pasta_Dental_Proteccion_Contra_Caries_110_gr_ASTERA.webp", name: "Pasta Dental Protección Contra Caries 110gr ASTERA" },
+            { file: "stel-conservacion-para-suelos-20kg.webp", name: "Stel Conservación para Suelos 20kg" },
+            { file: "suavizante-para-ropa-3l.webp", name: "Suavizante para Ropa 3L" },
+            { file: "suavizante-para-ropa-aroma-lavanda-3l.webp", name: "Suavizante para Ropa Aroma Lavanda 3L" },
+            { file: "suavizante-textil-acariz-2kg.webp", name: "Suavizante Textil Acariz 2kg" },
+            { file: "supervix-desengrasante-en-frio-5l.webp", name: "Supervix Desengrasante en Frío 5L" },
+            { file: "Toallas_Hmedas_Agua_Bolsa_12u_RENOVA.webp", name: "Toallas Húmedas de Agua Bolsa 12u RENOVA" },
+            { file: "Toallitas_Hmedas_Baby_Blue_Doxa_u.webp", name: "Toallitas Húmedas Baby Blue Doxa" },
+            { file: "Toallitas_Hmedas_Baby_Pink_Doxa_u.webp", name: "Toallitas Húmedas Baby Pink Doxa" },
+            { file: "Toallitas_Hmedas_Bloom_Doxa_u.webp", name: "Toallitas Húmedas Bloom Doxa" },
+            { file: "Toallitas_Hmedas_Romance_Doxa_u.webp", name: "Toallitas Húmedas Romance Doxa" },
+            { file: "Acondicionador_de_calendula_400_ml_aroma_natural.webp", name: "Acondicionador de Caléndula 400ml Aroma Natural" },
+            { file: "Acondicionador_de_manzanilla_400_ml_aroma_natural.webp", name: "Acondicionador de Manzanilla 400ml Aroma Natural" }
+        ];
+
+        // 2. Generar las tarjetas a partir del listado real
+        const productGrid = document.getElementById('productGrid');
+        let cardsHTML = '';
+
+        products.forEach((p, index) => {
+            const imgSrc = encodeURI(imgFolder + p.file);
+            cardsHTML += `
+                <div class="product-card">
+                    <span class="product-number">#${index + 1}</span>
+                    <div class="product-banner">
+                        <img src="${imgSrc}" alt="${p.name}" loading="lazy"
+                             onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="banner-fallback">${boxIcon}</div>
+                    </div>
+                    <div class="product-info">
+                        <p>${p.name}<br><span class="price">$0.00 USD</span></p>
+                    </div>
+                </div>
+            `;
+        });
+
+        productGrid.innerHTML = cardsHTML;
+
+        // 3. Control del Menú Móvil (igual que en index.html)
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('active');
+        }
+
+        // 4. Animación de aparición al hacer scroll (igual que en index.html)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

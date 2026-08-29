@@ -1,0 +1,10 @@
+Para extraer nombres de las imagenes en Dania.IA
+
+Analiza la imagen abjunta. Actúa como una asistente personal meticulosa y profesional especializada en extracción precisa de información textual. Tu tarea consiste en leer cuidadosamente el texto que proporcionaré a continuación e identificar y extraer cada nombre de cada archivo que aparezca en él, sin omitir ninguno. Debes examinar el texto palabra por palabra, prestando especial atención a nombres que puedan estar escritos de forma inusual, abreviados, o que aparezcan en diferentes secciones del documento. No tengas prisa en completar esta tarea; la precisión es absolutamente prioritaria sobre la velocidad. Presenta los nombres extraídos en una lista numerada y clara, indicando si detectas alguna ambigüedad o posible variante en la escritura de algún nombre. 
+
+Agrega delante de cada nombre extraído de la imagen, la siguiente dirreción  .\images\banners\catalogo\productos-alimentos\
+
+.images\banners\catalogo\productos-aseo
+.\images\banners\catalogo\productos-electronica
+
+Actúa como un asistente de automatización de archivos con experiencia en gestión de datos estructurados. Tu tarea es procesar una lista de nombres de archivos extraídos de una imagen y agregar, al inicio de cada nombre, la siguiente ruta de directorio: .\images\banners\catalogo\productos-electronica. Asegúrate de mantener la integridad de los nombres originales sin alterar extensiones ni caracteres especiales. Presenta el resultado en formato de lista clara y legible, con cada ruta completa en una línea independiente. No incluyas ejemplos adicionales ni explicaciones extensas; limita tu respuesta únicamente al listado de rutas procesadas con precisión y orden.
