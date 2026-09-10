@@ -639,8 +639,8 @@
       }
 
       .testimonial-avatar {
-        width: 46px;
-        height: 46px;
+        width: 72px;
+        height: 72px;
         border-radius: 50%;
         background-color: var(--primary);
         color: var(--white);
@@ -650,6 +650,15 @@
         font-weight: 700;
         font-size: 1rem;
         flex-shrink: 0;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
 
       .testimonial-name {
@@ -971,7 +980,9 @@
               la tienda."
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">YG</div>
+              <div class="testimonial-avatar">
+                <img src="images/banners/testimonios/rubia.jpg" alt="Yaneth Gil Real" />
+              </div>
               <div>
                 <div class="testimonial-name">Yaneth Gil Real</div>
                 <div class="testimonial-role">Cliente de Útiles del Hogar</div>
@@ -993,7 +1004,9 @@
               venden."
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">PM</div>
+              <div class="testimonial-avatar">
+                <img src="images/banners/testimonios/hombre.jpg" alt="Pedro Luis Martínez" />
+              </div>
               <div>
                 <div class="testimonial-name">Pedro Luis Martínez</div>
                 <div class="testimonial-role">Cliente de Electrónica</div>
@@ -1014,7 +1027,9 @@
               siempre queda claro qué hay disponible antes de ir."
             </p>
             <div class="testimonial-author">
-              <div class="testimonial-avatar">NR</div>
+              <div class="testimonial-avatar">
+                <img src="images/banners/testimonios/morena.jpg" alt="Natacha Rodríguez" />
+              </div>
               <div>
                 <div class="testimonial-name">Natacha Rodríguez</div>
                 <div class="testimonial-role">Cliente de Perfumería</div>
