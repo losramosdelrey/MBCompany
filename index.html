@@ -577,6 +577,93 @@
       }
 
       /* =========================================
+           TESTIMONIOS
+           ========================================= */
+      .testimonials {
+        padding: 70px 0 60px;
+        background-color: var(--bg-light);
+        border-bottom: 4px solid var(--gris-humo);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .testimonial-card {
+        background-color: var(--white);
+        border-radius: 12px;
+        padding: 32px 28px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+        border-top: 4px solid var(--accent);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .testimonial-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-stars svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--accent);
+      }
+
+      .testimonial-text {
+        color: var(--text-dark);
+        font-size: 1rem;
+        line-height: 1.6;
+        font-style: italic;
+        margin-bottom: 24px;
+        flex-grow: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .testimonial-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .testimonial-name {
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .testimonial-role {
+        color: var(--text-light);
+        font-size: 0.85rem;
+      }
+
+      /* =========================================
            SECCIÓN NOSOTROS
            ========================================= */
       .about {
@@ -857,6 +944,82 @@
               para compras de alimentos, electrodomésticos, ferretería y
               muchísimo más.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonials fade-in">
+      <div class="container">
+        <h2 class="section-title" style="text-align: center">
+          Lo Que Dicen Nuestros Clientes
+        </h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+            </div>
+            <p class="testimonial-text">
+              "Encontré todo lo que buscaba para organizar la casa en un
+              mismo lugar. Escribí por WhatsApp, me confirmaron la
+              disponibilidad al momento y no perdí tiempo en el viaje hasta
+              la tienda."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">YG</div>
+              <div>
+                <div class="testimonial-name">Yaneth Gil Real</div>
+                <div class="testimonial-role">Cliente de Útiles del Hogar</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+            </div>
+            <p class="testimonial-text">
+              "Compré un electrodoméstico y el precio realmente valió la
+              pena frente a lo que había visto en otros lugares. La calidad
+              es la que prometen: se nota que seleccionan bien lo que
+              venden."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">PM</div>
+              <div>
+                <div class="testimonial-name">Pedro Luis Martínez</div>
+                <div class="testimonial-role">Cliente de Electrónica</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.9.6-5.2 4.56 1.57 6.77L12 16.9l-6.17 3.29 1.57-6.77-5.2-4.56 6.9-.6z"/></svg>
+            </div>
+            <p class="testimonial-text">
+              "Es mi tienda de confianza para la perfumería y el aseo del
+              hogar. La atención es siempre amable y personalizada, y
+              siempre queda claro qué hay disponible antes de ir."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">NR</div>
+              <div>
+                <div class="testimonial-name">Natacha Rodríguez</div>
+                <div class="testimonial-role">Cliente de Perfumería</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
