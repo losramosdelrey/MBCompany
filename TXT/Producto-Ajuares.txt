@@ -1,0 +1,23 @@
+Producto-Ajuares
+
+.\images\banners\catalogo\productos-ajuares\
+
+.\images\banners\catalogo\productos-ajuares\cojin_decorativo.webp
+.\images\banners\catalogo\productos-ajuares\cortina_con_argolla.webp
+.\images\banners\catalogo\productos-ajuares\cortina_con_estampado.webp
+.\images\banners\catalogo\productos-ajuares\cortina_de_blackout_estampado_foil.webp
+.\images\banners\catalogo\productos-ajuares\cortina_de_blackout_estampado_foil_blue.webp
+.\images\banners\catalogo\productos-ajuares\cortina_opaca_aislante_140_x_280_cm_alba_verde_romero.webp
+.\images\banners\catalogo\productos-ajuares\juego_de_funda_nordica_de_saten_100%_algodon_gris_plateado.webp
+.\images\banners\catalogo\productos-ajuares\juego_de_toallas_en_colores_100_x_120_cm.webp
+.\images\banners\catalogo\productos-ajuares\juego_de_toallas_en_colores_versa_100_x_120_cm.webp
+juego_de_funda nórdica_de_satén 100%_algodón_gris_plateado.webp
+.\images\banners\catalogo\productos-ajuares\toalla_de_bano_muval_140_x_70_cm.webp
+.\images\banners\catalogo\productos-ajuares\toalla_de_sauna_orgánica_de_80x200_cm_azul_aguamarina.webp
+.\images\banners\catalogo\productos-ajuares\toalla_gris_original_100x120_cm
+.\images\banners\catalogo\productos-ajuares\toalla_sophie_muva.webp
+
+
+
+
+
