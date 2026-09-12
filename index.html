@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="MBCompany Pinar del Río. El Precio se olvida, la Calidad se recuerda. Catálogo de Aseo, Relojería, Calzado, Alimentos, Hogar, Juguetes, Perfumería, Ajuares y Electrónica."
+      content="MaryVentas Pinar del Río. El Precio se olvida, la Calidad se recuerda. Catálogo de Aseo, Relojería, Calzado, Alimentos, Hogar, Juguetes, Perfumería, Ajuares y Electrónica."
     />
-    <title>MBCompany | Calidad que se recuerda en Pinar del Río</title>
+    <title>MaryVentas | Calidad que se recuerda en Pinar del Río</title>
     <style>
       /* =========================================
            VARIABLES Y RESET (Optimizado para rendimiento)
@@ -889,11 +889,15 @@
         <a href="index.html" class="logo">
           <img
             src="images/logos/logo.png"
-            alt="MBCompany - Calidad que se recuerda"
+            alt="MaryVentas - Calidad que se recuerda"
             height="48"
             onerror="this.style.display = 'none'"
           />
-          <span class="logo-text">MB<span>Company</span></span>
+          <!-- CAMBIO: "MBCompany" -> "MaryVentas". Preservación de color vía clases CSS existentes:
+               "Mary" hereda el color que tenía "MB" (.logo-text { color: var(--primary) })
+               "Ventas" hereda el color que tenía "Company" (.logo-text span { color: var(--accent) })
+               No se tocó el CSS: como las reglas apuntan a la estructura/clase (no al texto), el color se conserva automáticamente al cambiar solo el contenido de los <span>. -->
+          <span class="logo-text">Mary<span>Ventas</span></span>
         </a>
         <nav>
           <ul class="nav-menu" id="navMenu">
@@ -1117,12 +1121,15 @@
         <div class="footer-logo">
           <img
             src="images/logos/logo_invertido.png"
-            alt="MBCompany"
+            alt="MaryVentas"
             height="42"
             style="display: inline-block; vertical-align: middle"
             onerror="this.style.display = 'none'"
           />
-          <span class="footer-logo-text">MB<span>Company</span></span>
+          <!-- CAMBIO: "MBCompany" -> "MaryVentas" (logo del footer). Preservación de color vía clases CSS existentes:
+               "Mary" hereda el color que tenía "MB" (.footer-logo-text { color: var(--white) })
+               "Ventas" hereda el color que tenía "Company" (.footer-logo-text span { color: var(--accent) }) -->
+          <span class="footer-logo-text">Mary<span>Ventas</span></span>
         </div>
         <p class="footer-slogan">
           "El Precio se olvida, la Calidad se recuerda"

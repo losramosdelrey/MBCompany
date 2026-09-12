@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros | MBCompany - Calidad que se recuerda</title>
+    <title>Nosotros | MaryVentas - Calidad que se recuerda</title>
     
     <!-- Fuentes unificadas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -548,8 +548,12 @@
     <header id="main-header">
         <nav>
             <a href="index.html" class="logo">
-                <img src="images/logos/logo.png" alt="MBCompany - Calidad que se recuerda" height="48" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                <span class="logo-text">MB<span>Company</span></span>
+                <img src="images/logos/logo.png" alt="MaryVentas - Calidad que se recuerda" height="48" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <!-- CAMBIO: "MBCompany" -> "MaryVentas". Preservación de color vía clases CSS existentes:
+                     "Mary" hereda el color que tenía "MB" (.logo-text { color: #1A365D })
+                     "Ventas" hereda el color que tenía "Company" (.logo-text span { color: var(--accent-gold) })
+                     No se tocó el CSS: como las reglas apuntan a la estructura/clase (no al texto), el color se conserva automáticamente al cambiar solo el contenido de los <span>. -->
+                <span class="logo-text">Mary<span>Ventas</span></span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html#inicio" onclick="closeMenu()">Inicio</a></li>
@@ -578,11 +582,11 @@
     <section>
         <div class="historia-grid">
             <div class="img-frame fade-in-up">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Historia MBCompany">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Historia MaryVentas">
             </div>
             <div class="historia-text fade-in-up">
                 <h2>Nuestra Historia</h2>
-                <p>MBCompany nació con una convicción simple pero poderosa: los pinareños merecen acceder a productos de calidad mundial sin salir de su ciudad. Desde nuestros primeros pasos en la Calle Eusebio González, hemos evolucionado de un pequeño local a un referente comercial diversificado.</p>
+                <p>MaryVentas nació con una convicción simple pero poderosa: los pinareños merecen acceder a productos de calidad mundial sin salir de su ciudad. Desde nuestros primeros pasos en la Calle Eusebio González, hemos evolucionado de un pequeño local a un referente comercial diversificado.</p>
                 <p>No solo vendemos artículos; curamos experiencias. Cada división, desde la perfumería hasta la electrónica, ha sido construida sobre la base de la confianza y el servicio personalizado.</p>
                 <div class="highlight-box">
                     "Crecimos escuchando a nuestra comunidad, adaptándonos a sus sueños y necesidades."
@@ -660,7 +664,7 @@
         <!-- Sub-galería: Equipo y Detalles -->
         <div class="sub-gallery">
             <div class="sub-img fade-in-up">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Equipo MBCompany">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Equipo MaryVentas">
             </div>
             <div class="sub-img fade-in-up">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Atención al Cliente">
@@ -683,8 +687,11 @@
     <!-- Footer Unificado -->
     <footer>
         <div class="footer-logo fade-in-up">
-            <img src="images/logos/logo.png" alt="MBCompany" height="56" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-            <span class="footer-logo-text">MB<span>Company</span></span>
+            <img src="images/logos/logo.png" alt="MaryVentas" height="56" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <!-- CAMBIO: "MBCompany" -> "MaryVentas" (logo del footer). Preservación de color vía clases CSS existentes:
+                 "Mary" hereda el color que tenía "MB" (.footer-logo-text { color: #1A365D })
+                 "Ventas" hereda el color que tenía "Company" (.footer-logo-text span { color: var(--accent-gold) }) -->
+            <span class="footer-logo-text">Mary<span>Ventas</span></span>
         </div>
         <p style="color: var(--accent-gold); font-style: italic; font-size: 1.2rem;">"El Precio se olvida, la Calidad se recuerda"</p>
         <div class="footer-copy fade-in-up">

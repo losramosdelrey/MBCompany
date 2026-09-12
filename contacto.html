@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contacta a MBCompany en Pinar del Río: dirección, teléfonos, correo y WhatsApp. Visítanos o escríbenos.">
-    <title>Contacto | MBCompany Pinar del Río</title>
+    <meta name="description" content="Contacta a MaryVentas en Pinar del Río: dirección, teléfonos, correo y WhatsApp. Visítanos o escríbenos.">
+    <title>Contacto | MaryVentas Pinar del Río</title>
     <style>
         /* =========================================
            VARIABLES Y RESET (Optimizado para rendimiento)
@@ -722,8 +722,12 @@
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logos/logo.png" alt="MBCompany - Calidad que se recuerda" height="48" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                <span class="logo-text">MB<span>Company</span></span>
+                <img src="images/logos/logo.png" alt="MaryVentas - Calidad que se recuerda" height="48" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <!-- CAMBIO: "MBCompany" -> "MaryVentas". Preservación de color vía clases CSS existentes:
+                     "Mary" hereda el color que tenía "MB" (.logo-text { color: var(--primary) })
+                     "Ventas" hereda el color que tenía "Company" (.logo-text span { color: var(--accent) })
+                     No se tocó el CSS: como las reglas apuntan a la estructura/clase (no al texto), el color se conserva automáticamente al cambiar solo el contenido de los <span>. -->
+                <span class="logo-text">Mary<span>Ventas</span></span>
             </a>
             <nav>
                 <ul class="nav-menu" id="navMenu">
@@ -783,7 +787,7 @@
                     </div>
 
                     <div style="margin-top: 30px;">
-                        <a href="https://wa.me/5356729186?text=Hola%20Rey,%20visité%20la%20web%20de%20MBCompany%20y%20quiero%20hacer%20una%20consulta." class="btn btn-whatsapp" target="_blank" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/5356729186?text=Hola%20Rey,%20visité%20la%20web%20de%20MaryVentas%20y%20quiero%20hacer%20una%20consulta." class="btn btn-whatsapp" target="_blank" style="width: 100%; justify-content: center;">
                             Chatear ahora por WhatsApp
                         </a>
                     </div>
@@ -806,8 +810,11 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="images/logos/logo_invertido.png" alt="MBCompany" height="42" style="display: inline-block; vertical-align: middle;" onerror="this.style.display='none'">
-                <span class="footer-logo-text">MB<span>Company</span></span>
+                <img src="images/logos/logo_invertido.png" alt="MaryVentas" height="42" style="display: inline-block; vertical-align: middle;" onerror="this.style.display='none'">
+                <!-- CAMBIO: "MBCompany" -> "MaryVentas" (logo del footer). Preservación de color vía clases CSS existentes:
+                     "Mary" hereda el color que tenía "MB" (.footer-logo-text { color: var(--white) })
+                     "Ventas" hereda el color que tenía "Company" (.footer-logo-text span { color: var(--accent) }) -->
+                <span class="footer-logo-text">Mary<span>Ventas</span></span>
             </div>
             <p class="footer-slogan">"El Precio se olvida, la Calidad se recuerda"</p>
             <div class="footer-links">
